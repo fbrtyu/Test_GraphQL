@@ -1,0 +1,56 @@
+type User {
+    id: Int
+    username: String!
+    posts: [Post]
+    comments: [Comment]
+}
+
+type Post {
+    id: Int
+    user: User!
+    title: String!
+    text: String
+    commenting: Boolean!
+    comments: [Comment]
+}
+
+type Comment {
+    id: Int
+    user: User!
+    postid: Int!
+    text: String!
+    answer: [Comment]
+}
+
+type Query {
+    posts: [Post!]!
+    post(id: Int!): Post
+}
+
+input CreateUserInput {
+    id: Int
+    username: String!
+}
+
+input CreatePostInput {
+    id: Int
+    title: String!
+    text: String
+    commenting: Boolean!
+}
+
+input CreateCommentInput {
+    id: Int
+    text: String!
+}
+
+type Mutation {
+    createUser(input: CreateUserInput): User!
+    createPost(userid: Int!, input: CreatePostInput): Post!
+    createComment(userid: Int!, postid: Int!, input: CreateCommentInput): Comment!
+    createAnswer(userid: Int!, postid: Int!, commentid: Int!, input: CreateCommentInput): Comment!
+}
+
+type Subscription {
+    comment: Comment!
+}

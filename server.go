@@ -12,23 +12,28 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/99designs/gqlgen/graphql/playground"
+	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 
 const defaultPort = "8080"
 
 func main() {
+	errr := godotenv.Load()
+	if errr != nil {
+		log.Fatal("Error loading .env file")
+	}
 	dbuser, err := os.LookupEnv("DBUSER")
 	if err {
 		fmt.Println(dbuser)
 	}
 	dbpassword, err := os.LookupEnv("DBPASSWORD")
 	if err {
-		fmt.Println(dbuser)
+		fmt.Println(dbpassword)
 	}
 	dbname, err := os.LookupEnv("DBNAME")
 	if err {
-		fmt.Println(dbuser)
+		fmt.Println(dbname)
 	}
 
 	// Считывание вариантов хранения данных
@@ -42,6 +47,7 @@ func main() {
 
 	if store == "B" {
 		connStr := "user=" + dbuser + " password=" + dbpassword + " dbname=" + dbname + " sslmode=disable"
+		fmt.Println(connStr)
 		db, err := sql.Open("postgres", connStr)
 		if err != nil {
 			panic(err)

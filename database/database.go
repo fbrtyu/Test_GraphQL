@@ -3,8 +3,11 @@ package database
 import (
 	"database/sql"
 	"fmt"
+	"log"
 	"os"
 	"ozon-test/graph/model"
+
+	"github.com/joho/godotenv"
 
 	_ "github.com/lib/pq"
 )
@@ -15,6 +18,10 @@ type DB struct {
 
 // Подключение к базе данных
 func ConnectPG() *DB {
+	errr := godotenv.Load()
+	if errr != nil {
+		log.Fatal("Error loading .env file")
+	}
 	dbuser, errconn := os.LookupEnv("DBUSER")
 	if errconn {
 		fmt.Println(dbuser)

@@ -2,13 +2,13 @@
 
 <h2>Запросы GraphQL:</h2>
 <pre>
- 
 mutation addUser {
   createUser(input: {username: "newuser"}) {
     id
   }
 }
-
+</pre>
+<pre>
 mutation addPost {
   createPost(
     userid: 1
@@ -17,19 +17,22 @@ mutation addPost {
     id
   }
 }
-
+</pre>
+<pre>
 mutation addComment {
   createComment(userid: 1, postid: 1, input: {text: "somecomment"}) {
     id
   }
 }
-
+</pre>
+<pre>
 mutation addAnswer {
   createAnswer(userid: 1, postid: 1, commentid: 1, input: {text: "answer"}) {
     id
   }
 }
-
+</pre>
+<pre>
 query GetListOfPosts {
   posts {
     id
@@ -41,7 +44,8 @@ query GetListOfPosts {
     commenting
   }
 }
-
+</pre>
+<pre>
 query GetPostAndComments {
   post(id: 1) {
     id
@@ -74,13 +78,13 @@ query GetPostAndComments {
     }
   }
 }
-
+</pre>
+<pre>
 subscription Subscription {
   comment {
     text
   }
 }
-
 </pre>
 
 <h2>Структура БД</h2>

@@ -89,6 +89,3 @@ subscription Subscription {
 
 <h2>Структура БД</h2>
 https://raw.githubusercontent.com/fbrtyu/Ozon_test/main/Untitled.jpg
-
-<h2>Демонстрация работы</h2>
-https://youtu.be/ywaus5FWiIs?si=GXwykTv0UQFzzv6_

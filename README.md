@@ -88,5 +88,5 @@ subscription Subscription {
 </pre>
 
 <div align="center">
-  <img src="https://github.com/fbrtyu/Information-System-of-Internet-Provider/blob/main/Untitled.jpg?raw=true" width="700"/>
+  <img src="https://github.com/fbrtyu/Ozon_test/blob/main/Untitled.jpg?raw=true" width="700"/>
 </div

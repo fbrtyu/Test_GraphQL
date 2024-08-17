@@ -1,4 +1,4 @@
-# Ozon_test
+# Test_GraphQL
 
 <h2>Запросы GraphQL:</h2>
 <pre>
@@ -86,3 +86,7 @@ subscription Subscription {
   }
 }
 </pre>
+
+<div align="center">
+  <img src="https://github.com/fbrtyu/Information-System-of-Internet-Provider/blob/main/Untitled.jpg?raw=true" width="700"/>
+</div
